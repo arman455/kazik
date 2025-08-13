@@ -1,0 +1,83 @@
+.main-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.balance {
+    display: flex;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 113px);
+    gap: 10px;
+    justify-content: center;
+}
+
+.flip-card {
+    position: relative;
+    width: 113px;
+    height: 113px;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+/* .flip-card-front {
+    background: #ccc;
+} */
+
+.flip-card-back {
+    background: #f8f8f8;
+    transform: rotateY(180deg);
+}
+
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    perspective: 600px;
+}
+
+.cell.revealed {
+    background: #f8f8f8;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
