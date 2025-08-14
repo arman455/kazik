@@ -1,6 +1,17 @@
+html,
+body {
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 .main-container {
+    height: 100vh;
     text-align: center;
     padding: 20px;
+    background: radial-gradient(circle, #4C1D95 0%, #1E40AF 100%);
+    overflow: hidden;
 }
 
 .balance {
@@ -9,6 +20,18 @@
     margin-bottom: 10px;
     align-items: center;
     justify-content: center;
+}
+
+.balance-text-1 {
+    color: white;
+}
+
+.balance-animated {
+    color: #92ed74;
+    text-shadow:
+        0 0 10px rgb(4, 162, 44),
+        0 0 20px rgba(88, 239, 0, 0.852),
+        0 0 40px rgb(37, 235, 37);
 }
 
 .grid {
@@ -40,20 +63,14 @@
     border-radius: 8px;
 }
 
-/* .flip-card-front {
-    background: #ccc;
-} */
-
 .flip-card-back {
     background: #f8f8f8;
     transform: rotateY(180deg);
 }
 
-
 .cell {
-    width: 100px;
-    height: 100px;
-    background: #ccc;
+    width: 113px;
+    height: 113px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -74,10 +91,117 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.863);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
+}
+
+.button {
+    background: linear-gradient(#6DBF1D, #498013);
+    width: 194px;
+    height: 48px;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+.header-text {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#gameover {
+    color: #ffd6d6;
+    text-shadow:
+        0 0 10px rgba(255, 0, 0, 0.6),
+        0 0 20px rgba(255, 0, 0, 0.4),
+        0 0 40px rgba(255, 0, 0, 0.2);
+}
+
+#gamevictory {
+    color: #ffffff;
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.6),
+        0 0 20px rgba(255, 255, 255, 0.4),
+        0 0 40px rgba(255, 255, 255, 0.2);
+}
+
+.text {
+    max-width: 274px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.text-balanc {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.flying-money {
+    width: 50px ;
+    height: 50px ;
+    filter: drop-shadow(0 0 5px gold);
+    z-index: 1000;
+    opacity: 1;
+}
+
+.money-fly {
+    position: absolute;
+    animation: flyMoney 0.8s ease-out forwards;
+}
+
+@keyframes flyMoney {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(200px, -100px) scale(0.3);
+        opacity: 0;
+    }
+}
+
+:root {
+    --cell-size: 113px;
+}
+
+@media (max-width: 480px) {
+    :root {
+        --cell-size: 80px;
+    }
+
+    .grid {
+        gap: 0px;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 360px) {
+    :root {
+        --cell-size: 70px;
+    }
+
+    .grid {
+        gap: 0px;
+        justify-content: flex-end;
+    }
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+}
+
+.card-front {
+    width: var(--cell-size);
+    height: var(--cell-size);
 }

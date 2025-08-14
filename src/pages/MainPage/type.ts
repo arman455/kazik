@@ -5,3 +5,9 @@ export type CellData =
     | { type: "zero"; revealed: boolean }
     | { type: "x2"; revealed: boolean }
     | { type: "bomb"; revealed: boolean };
+
+export type Cell = {
+    type: string;
+    value?: number;
+    isOpen: boolean;
+};
